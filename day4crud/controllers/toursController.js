@@ -3,9 +3,9 @@ const fsPromises = require('fs/promises');
 
 let data=JSON.parse(fs.readFileSync("./data/data.json",{encoding:"utf8"}));
 
-module.exports.checkID = (req, res, val, next) => {
+module.exports.checkID = (req, res, next, val) => {
   
-  let objToFind = data.find((id)=> id==val);
+  let objToFind = data.find((obj)=> obj.id==val);
   
   if(objToFind==undefined){
       res.status(400);
