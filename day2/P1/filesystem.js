@@ -39,4 +39,4 @@ console.log('********START************')
 fsPromises.readFile('./newFile.txt', {encoding:'utf-8'}).then(console.log);
 console.log('********END************'); 
 
-// encoding:'utf-8' using instead of wring gain and again toString();
+// encoding:'utf-8' using instead of wring again and again toString();

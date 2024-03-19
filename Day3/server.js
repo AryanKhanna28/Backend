@@ -11,7 +11,7 @@ let ProductPagehtml=fs.readFileSync('./product.html', { encoding: 'utf8' }); //s
 const app=http.createServer((req,res)=>{
     console.log("request recieved");
     const route= req.url;
-    const parsedUrl=url.parse(route,true)
+    const parsedUrl=url.parse(route,true)//vip 
     // console.log(parsedUrl);
 
     let card=function(element){
@@ -53,8 +53,8 @@ const app=http.createServer((req,res)=>{
                     // console.log(card(ele))
                     return card(ele);
                 })
-                // const strData=sendingData.toString();
-                const strjoindata=sendingData.join('');
+                // const strData=sendingData.toString(); -->this convert to string but "," reh jata hai page pe
+                const strjoindata=sendingData.join('');  //convert to string
                 res.end(strjoindata)
             }
             

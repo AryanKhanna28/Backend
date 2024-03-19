@@ -38,6 +38,8 @@ const app = http.createServer((req, res)=>{
     });
     fsPromises.appendFile('./logs.txt', `Request are: ${date}: \nRoute is : ${req.url}\n\n`);
     res.end('<h1 style= "color:red;">Hello Aryan</h1>');
+    // console.log(req.headers)
+    console.log(req.url);
 }) 
 
 app.listen(2800,()=>{
