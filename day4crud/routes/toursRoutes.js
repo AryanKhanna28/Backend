@@ -14,7 +14,7 @@ toursRoute.param('id', toursController.checkID) //middleware route
 toursRoute.route('/:id')
           .get(toursController.getTour)
           .patch(toursController.updateTour)
-          .put(toursController.replaceTour)
+          .put(toursController.validateBody,toursController.replaceTour)
           .delete(toursController.deleteTour)
 
 module.exports = toursRoute;

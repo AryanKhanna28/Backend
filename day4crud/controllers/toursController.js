@@ -131,7 +131,6 @@ module.exports.replaceTour = (req,res) => {
     let {id:reqId, ...rest}= newTour;
     const { id: paramId } = req.params;
   
-    if(rest.name && rest.price && rest.duration){
       try{
         //not to replace the object accordingly as the data is updated
       
@@ -162,14 +161,6 @@ module.exports.replaceTour = (req,res) => {
         res.status(500);
         res.json({ error: 'Internal server error' });
       }
-    }
-    else{
-      res.status(400);
-      res.send({
-        status: 'fail',
-        message: 'Required params: name, price, duration'
-        })
-    }
   }
 
 module.exports.deleteTour = function (req,res){
@@ -188,7 +179,7 @@ module.exports.deleteTour = function (req,res){
   
       res.status(204);
       res.json({
-        status:"Resurce deleted successfully",
+        status:"Resource deleted successfully",
         body:{
           tour:{}
         }

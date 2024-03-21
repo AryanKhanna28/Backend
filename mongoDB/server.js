@@ -1,10 +1,11 @@
 const app = require('./app');
 const mongoose = require('mongoose');
 
-const database_URL = "mongodb+srv://khannavansh2002:<password>@cluster0.expuwvl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const database_URL = "mongodb+srv://khannavansh2002:<password>@cluster0.expuwvl.mongodb.net/<name>?retryWrites=true&w=majority&appName=Cluster0";
 const database_password = 'AryanKhanna';
+const db_name = 'tesing'
 
-const db_url = database_URL.replace('<password>', database_password);
+const db_url = database_URL.replace('<password>', database_password).replace('<name>',db_name);
 
 mongoose.connect(db_url).then(() => {
     console.log("Connected to database");
@@ -39,10 +40,11 @@ const testTour = new Tour({
 });
 
 testTour.save().then((tour) => {
-    console.log("Tour created:", tour);
-}).catch((error) => {
-    console.log("Error creating tour:", error);
-});
+    console.log("Tour created:", tour)
+    })
+    .catch((error) => {
+        console.log("Error creating tour:", error);
+    });
 
 const PORT = 1400;
 app.listen(PORT, () => {
